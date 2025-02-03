@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive TODO List</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <h2>TODO List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a request">
+    <input type="date" id="dueDateInput">
+    <button id="addTaskButton">Add Task</button>
+    <p class="error" id="error"></p>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Request</th>
+                <th>Date Added</th>
+                <th>Due Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+    </table>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
