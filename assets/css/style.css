@@ -1,16 +1,37 @@
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: auto;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+.sidebar {
+    width: 200px;
+    background: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.main-content {
+    flex: 1;
     padding: 20px;
 }
-input, button {
+input, button, select {
     margin: 5px;
     padding: 10px;
-}
-button :hover {
-    background-color: aqua;
 }
 table {
     width: 100%;
@@ -23,8 +44,35 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: palegreen;
+    background-color: #f4f4f4;
+}
+th.task{
+    width: 30%;
+}
+.no-entry{
+    color: #95a5a6;
 }
 .error {
     color: red;
+}
+.add-button {
+    background-color: green;
+    color: white;
+    border: shadow;
+    padding: 10px;
+    cursor: pointer;
+}
+.edit-button {
+    background-color: #ffbf00;
+    color: black;
+    border: shadow;
+    padding: 5px;
+    cursor: pointer;
+}
+.delete-button {
+    background-color: red;
+    color: white;
+    border: shadow;
+    padding: 5px;
+    cursor: pointer;
 }

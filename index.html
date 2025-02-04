@@ -4,27 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive TODO List</title>
+    <title>Interactive To-Do List</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h2>TODO List</h2>
-    <input type="text" id="taskInput" placeholder="Enter a request">
-    <input type="date" id="dueDateInput">
-    <button id="addTaskButton">Add Task</button>
-    <p class="error" id="error"></p>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Request</th>
-                <th>Date Added</th>
-                <th>Due Date</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="taskList"></tbody>
-    </table>
+    <div class="container">
+        <nav class="sidebar">
+            <button onclick="filterTasks('all')">All Tasks</button>
+            <button onclick="filterTasks('new')">New</button>
+            <button onclick="filterTasks('in-progress')">In Progress</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+            <button onclick="openSettings()">Settings</button>
+            <button onclick="logout()">Logout</button>
+        </nav>
+        <div class="main-content">
+            <h2>To-Do List</h2>
+            <input type="text" id="taskInput" placeholder="Enter a task" maxlength="300">
+            <label for="dateAddedInput">Date Added:</label>
+            <input type="date" id="dateAddedInput">
+            <label for="dueDateInput">Due Date:</label>
+            <input type="date" id="dueDateInput">
+            <label for="priorityInput">Priority:</label>
+            <select id="priorityInput">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button id="addTaskButton" class="add-button">Add Task</button>
+            <p class="error" id="error"></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="serialno">#</th>
+                        <th class="task">Task</th>
+                        <th class="priority">Priority</th>
+                        <th class="status">Status</th>
+                        <th class="date-added">Date Added</th>
+                        <th class="due-date">Due Date</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="taskList">
+                    <tr class="no-entry">
+                        <td colspan="7">No entry found, start adding tasks</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
+
